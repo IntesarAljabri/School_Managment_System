@@ -28,6 +28,8 @@ public class ClassController {
         if (classOptional.isPresent()) {
             return ResponseEntity.ok(classOptional.get());
         }
+        return ResponseEntity.notFound().build();
+    }
 
     }
-}
+
