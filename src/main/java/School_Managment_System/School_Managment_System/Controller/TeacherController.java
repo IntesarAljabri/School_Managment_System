@@ -36,4 +36,6 @@ public class TeacherController {
     public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {
         Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
         if (existingTeacher.isPresent()) {
+            teacher.setId(id);
+        }
 }
