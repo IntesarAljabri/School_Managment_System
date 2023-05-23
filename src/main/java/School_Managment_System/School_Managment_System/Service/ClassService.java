@@ -24,4 +24,7 @@ public class ClassService {
     public Class updateClass(Class updatedClass) {
         return classRepository.save(updatedClass);
     }
+    public void deleteClass(Long id) {
+        classRepository.deleteById(id);
+    }
 }
