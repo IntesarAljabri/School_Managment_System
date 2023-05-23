@@ -14,17 +14,21 @@ public class ClassService {
     ClassLoaderRepository classRepository;
 
     public List<Class> getAllClasses() {
-        return Collections.singletonList(classRepository.getClass());
+        return classRepository.findAll();
     }
+
     public Optional<Class> getClassById(Long id) {
         return classRepository.findById(id);
     }
+
     public Class createClass(Class newClass) {
         return classRepository.save(newClass);
     }
+
     public Class updateClass(Class updatedClass) {
         return classRepository.save(updatedClass);
     }
+
     public void deleteClass(Long id) {
         classRepository.deleteById(id);
     }
