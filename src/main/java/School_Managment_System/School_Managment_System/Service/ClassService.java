@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.management.loading.ClassLoaderRepository;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClassService {
@@ -13,5 +14,8 @@ public class ClassService {
 
     public List<Class> getAllClasses() {
         return classRepository.findAll();
+    }
+    public Optional<Class> getClassById(Long id) {
+        return classRepository.findById(id);
     }
 }
