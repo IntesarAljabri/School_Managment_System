@@ -37,5 +37,7 @@ public class TeacherController {
         Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
         if (existingTeacher.isPresent()) {
             teacher.setId(id);
+            Teacher updatedTeacher = teacherService.updateTeacher(teacher);
+            return ResponseEntity.ok(updatedTeacher);
         }
 }
