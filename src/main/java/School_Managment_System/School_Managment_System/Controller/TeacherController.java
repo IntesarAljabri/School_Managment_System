@@ -47,4 +47,6 @@ public class TeacherController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTeacher(@PathVariable Long id) {
         Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
+        if (existingTeacher.isPresent()) {
+            teacherService.deleteTeacher(id);
 }
