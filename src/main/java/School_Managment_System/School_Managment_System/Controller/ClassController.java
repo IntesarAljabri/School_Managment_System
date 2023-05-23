@@ -35,10 +35,10 @@ public class ClassController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdClass);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Class> updateClass(@PathVariable Long id, @RequestBody Class updatedClass) {
+    public ResponseEntity<Class> updateClass(@PathVariable Long id, @RequestBody Class updatedClass) throws NoSuchFieldException {
         Optional<Class> existingClass = classService.getClassById(id);
         if (existingClass.isPresent()) {
-            updatedClass.setId(id);
+            updatedClass.getField(String.valueOf(id));
             Class updated = classService.updateClass(updatedClass);
             return ResponseEntity.ok(updated);
         }
@@ -50,7 +50,7 @@ public class ClassController {
         classService.deleteClass(id);
         return ResponseEntity.noContent().build();
     }
-    
+
 }
 
 
