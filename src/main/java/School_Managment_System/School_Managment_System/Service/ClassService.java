@@ -13,7 +13,7 @@ public class ClassService {
     ClassLoaderRepository classRepository;
 
     public List<Class> getAllClasses() {
-        return classRepository.findAll();
+        return classRepository.finalize();
     }
     public Optional<Class> getClassById(Long id) {
         return classRepository.findById(id);
