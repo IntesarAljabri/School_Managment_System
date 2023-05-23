@@ -4,6 +4,7 @@ import School_Managment_System.School_Managment_System.Model.Teacher;
 import School_Managment_System.School_Managment_System.Service.ClassService;
 import School_Managment_System.School_Managment_System.Service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -26,12 +27,17 @@ public class ClassController {
         return ClassService.getClassById(id);
     }
 
-    @PostMapping(value = "add")
-    public String Class(@RequestBody Class class) {
-        ClassService.addClass( class);
-        return "Class added";
-    }
+//    @PostMapping(value = "add")
+//    public String Class(@RequestBody Class class) {
+//        ClassService.addClass( class);
+//        return "Class added";
+//    }
+    @PostMapping
+    public ResponseEntity<Class> createClass(@RequestBody Class newClass) {
 
+        Class createdClass = classService.createClass(newClass);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdClass);
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteClass(@PathVariable Long id) {
@@ -53,12 +59,6 @@ public class ClassController {
 //            return ResponseEntity.ok(classOptional.get());
 //        }
 //        return ResponseEntity.notFound().build();
-//    }
-//   @PostMapping
-//    public ResponseEntity<Class> createClass(@RequestBody Class newClass) {
-//
-//        Class createdClass = classService.createClass(newClass);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(createdClass);
 //    }
 //    @PutMapping("/{id}")
 //    public ResponseEntity<Class> updateClass(@PathVariable Long id, @RequestBody Class updatedClass) throws NoSuchFieldException {
