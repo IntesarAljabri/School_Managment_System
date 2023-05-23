@@ -12,4 +12,8 @@ public class ClassController {
     @Autowired
     ClassService classService;
 
+    @GetMapping
+    public List<Class> getAllClasses() {
+        return classService.getAllClasses();
+    }
 }
