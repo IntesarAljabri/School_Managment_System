@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
+
 
 @Data
 @Setter
@@ -18,5 +20,8 @@ public class Course {
     private Long id;
     String course_name;
     String grade;
-    List<Students> Student;
+
+    @OneToMany(mappedBy = "course")
+     List<Student> students;
+
 }
