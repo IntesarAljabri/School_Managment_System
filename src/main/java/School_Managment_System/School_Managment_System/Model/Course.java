@@ -28,6 +28,6 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<Teacher> teachers;
 
- 
+
 
 }
