@@ -42,6 +42,7 @@ public class ClassController {
             Class updated = classService.updateClass(updatedClass);
             return ResponseEntity.ok(updated);
         }
+        return ResponseEntity.notFound().build();
     }
 }
 
