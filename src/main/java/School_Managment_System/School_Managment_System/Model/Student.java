@@ -18,6 +18,10 @@ public class Student {
     private Long id;
     String name;
     String gender;
+    // Define the relationship with Course
+    // Define the relationship with Class
+    @ManyToOne
+     Class classes;
 
     @OneToMany(mappedBy = "student")
     List<Course> courses;
