@@ -2,11 +2,9 @@ package School_Managment_System.School_Managment_System.Controller;
 
 import School_Managment_System.School_Managment_System.Service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,10 +28,12 @@ public class ClassController {
         }
         return ResponseEntity.notFound().build();
     }
-    @PostMapping
+   @PostMapping
     public ResponseEntity<Class> createClass(@RequestBody Class newClass) {
 
-
+        Class createdClass = classService.createClass(newClass);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdClass);
     }
 }
+
 
