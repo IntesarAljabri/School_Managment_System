@@ -18,4 +18,7 @@ public class ClassService {
     public Optional<Class> getClassById(Long id) {
         return classRepository.findById(id);
     }
+    public Class createClass(Class newClass) {
+        return classRepository.save(newClass);
+    }
 }
