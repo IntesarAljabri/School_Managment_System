@@ -34,7 +34,7 @@ public class TeacherService {
         teacherRepository.deleteById(id);
     }
 
-    public List<Teacher> getTeachersByCourse(String course) {
-        return teacherRepository.findByCourse(course);
-    }
+//    public List<Teacher> getTeachersByCourse(Long id) {
+//        return teacherRepository.getCourseById(id);
+//    }
 }
