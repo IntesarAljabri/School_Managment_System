@@ -1,6 +1,8 @@
 package School_Managment_System.School_Managment_System.Controller;
 
+import School_Managment_System.School_Managment_System.Model.Teacher;
 import School_Managment_System.School_Managment_System.Service.ClassService;
+import School_Managment_System.School_Managment_System.Service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,10 +27,11 @@ public class ClassController {
     }
 
     @PostMapping(value = "add")
-    public String Class(@RequestBody Class class){
-       ClassService.addClass(class);
+    public String Class(@RequestBody Class class) {
+        ClassService.addClass( class);
         return "Class added";
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteClass(@PathVariable Long id) {
