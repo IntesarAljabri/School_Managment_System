@@ -30,6 +30,10 @@ public class ClassController {
         }
         return ResponseEntity.notFound().build();
     }
+    @PostMapping
+    public ResponseEntity<Class> createClass(@RequestBody Class newClass) {
+
 
     }
+}
 
