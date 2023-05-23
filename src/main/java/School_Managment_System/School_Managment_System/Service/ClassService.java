@@ -1,5 +1,6 @@
 package School_Managment_System.School_Managment_System.Service;
 
+import School_Managment_System.School_Managment_System.Repository.ClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.Optional;
 @Service
 public class ClassService {
     @Autowired
-    ClassLoaderRepository classRepository;
+    ClassRepository classRepository;
 
     public List<Class> getAllClasses() {
         return classRepository.findAll();
