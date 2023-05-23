@@ -21,4 +21,7 @@ public class ClassService {
     public Class createClass(Class newClass) {
         return classRepository.save(newClass);
     }
+    public Class updateClass(Class updatedClass) {
+        return classRepository.save(updatedClass);
+    }
 }
