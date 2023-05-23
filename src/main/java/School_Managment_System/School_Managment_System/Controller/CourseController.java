@@ -1,7 +1,14 @@
 package School_Managment_System.School_Managment_System.Controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import School_Managment_System.School_Managment_System.Model.Course;
+import School_Managment_System.School_Managment_System.Service.CourseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/courses")
@@ -49,8 +56,8 @@ public class CourseController {
     }
 
     @GetMapping("/{id}/students")
-    public ResponseEntity<List<Student>> getStudentsByCourseId(@PathVariable Long id) {
-        List<Student> students = courseService.getStudentsByCourseId(id);
+    public ResponseEntity<Optional<Course>> getStudentsByCourseId(@PathVariable Long id) {
+        Optional<Course> students = courseService.getCourseById(id);
         return ResponseEntity.ok(students);
     }
 }
