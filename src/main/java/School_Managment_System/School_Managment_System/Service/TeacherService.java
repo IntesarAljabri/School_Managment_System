@@ -4,6 +4,7 @@ import School_Managment_System.School_Managment_System.Model.Teacher;
 import School_Managment_System.School_Managment_System.Repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +13,12 @@ import java.util.Optional;
 public class TeacherService {
 
     @Autowired
-    private TeacherRepository teacherRepository;
+    private static TeacherRepository teacherRepository;
+
+    public static String addTeachers(@RequestBody Teacher teacher) {
+        TeacherService.addTeachers(teacher);
+        return "Class added";
+    }
 
     public List<Teacher> getAllTeachers() {
         return teacherRepository.findAll();
