@@ -51,4 +51,6 @@ public class TeacherController {
             teacherService.deleteTeacher(id);
             return ResponseEntity.noContent().build();
         }
+        return ResponseEntity.notFound().build();
+    }
 }
