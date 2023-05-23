@@ -21,7 +21,7 @@ public class ClassController {
         return classService.getAllClasses();
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Class> getClassById(@PathVariable Long id) {
+    public ResponseEntity<Class> findById(@PathVariable Long id) {
         Optional<Class> classOptional = classService.getClassById(id);
         if (classOptional.isPresent()) {
             return ResponseEntity.ok(classOptional.get());

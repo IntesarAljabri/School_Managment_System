@@ -13,7 +13,7 @@ public class ClassService {
     @Autowired
     ClassLoaderRepository classRepository;
 
-    public List<Class> getAllClasses(Long id) {
+    public List<Class> getAllClasses() {
         return Collections.singletonList(classRepository.getClass());
     }
     public Optional<Class> getClassById(Long id) {
