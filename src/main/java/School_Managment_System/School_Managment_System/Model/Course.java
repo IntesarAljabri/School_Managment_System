@@ -22,6 +22,6 @@ public class Course {
     String grade;
 
     @OneToMany(mappedBy = "course")
-     List<Student> students;
+    private List<Student> students;
 
 }
