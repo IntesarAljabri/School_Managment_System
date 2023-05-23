@@ -1,6 +1,7 @@
 package School_Managment_System.School_Managment_System.Controller;
 
 import School_Managment_System.School_Managment_System.Model.Course;
+import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Model.Teacher;
 import School_Managment_System.School_Managment_System.Service.CourseService;
 import School_Managment_System.School_Managment_System.Service.StudentService;
@@ -29,7 +30,12 @@ public class TeacherController {
 
         return TeacherService.getTeacherById(id);
     }
-    
+    @PostMapping(value = "add")
+    public String Teacher(@RequestBody Teacher teacher){
+        TeacherService.addTeachers(teacher);
+        return "Class added";
+    }
+
     @PostMapping
     public ResponseEntity<Teacher> createTeacher(@RequestBody Teacher teacher) {
         Teacher createdTeacher = teacherService.createTeacher(teacher);
