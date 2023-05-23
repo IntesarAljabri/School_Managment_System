@@ -14,7 +14,7 @@ import java.util.Optional;
 @RequestMapping("/api/teachers")
 public class TeacherController {
     @Autowired
-     TeacherService teacherService;
+    TeacherService teacherService;
 
     @GetMapping
     public ResponseEntity<List<Teacher>> getAllTeachers() {
@@ -27,11 +27,13 @@ public class TeacherController {
         Optional<Teacher> teacher = teacherService.getTeacherById(id);
         return teacher.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
+
     @PostMapping
     public ResponseEntity<Teacher> createTeacher(@RequestBody Teacher teacher) {
         Teacher createdTeacher = teacherService.createTeacher(teacher);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTeacher);
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {
         Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
@@ -40,4 +42,6 @@ public class TeacherController {
             Teacher updatedTeacher = teacherService.updateTeacher(teacher);
             return ResponseEntity.ok(updatedTeacher);
         }
+        return ResponseEntity.notFound().build();
+    }
 }
