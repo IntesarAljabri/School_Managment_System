@@ -44,4 +44,5 @@ public class TeacherController {
         }
         return ResponseEntity.notFound().build();
     }
+    @DeleteMapping("/{id}")
 }
