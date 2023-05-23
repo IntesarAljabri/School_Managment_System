@@ -16,10 +16,10 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    @GetMapping
-    public ResponseEntity<List<Course>> getAllCourses() {
-        List<Course> courses = courseService.getAllCourses();
-        return ResponseEntity.ok(courses);
+
+    @GetMapping(value = "getAll")
+    public List<Course> getAllCourse() {
+        return courseService.getAllCourse();
     }
 
     @GetMapping("/{id}")
