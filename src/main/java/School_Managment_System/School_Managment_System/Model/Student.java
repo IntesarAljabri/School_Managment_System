@@ -18,6 +18,6 @@ public class Student {
     private Long id;
     String name;
     String gender;
-    List <Course> Courses;
+    List <Courses> Course;
 
 }
