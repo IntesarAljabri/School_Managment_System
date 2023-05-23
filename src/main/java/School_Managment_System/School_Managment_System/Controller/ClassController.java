@@ -44,6 +44,8 @@ public class ClassController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @DeleteMapping("/{id}")
 }
 
 
