@@ -18,6 +18,8 @@ public class Student_Course {
     @OneToMany
     Course id;
 
-    
+    @OneToMany
+    Student st_id;
+
 
 }
