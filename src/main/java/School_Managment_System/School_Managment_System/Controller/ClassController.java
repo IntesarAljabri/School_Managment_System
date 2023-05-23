@@ -25,6 +25,9 @@ public class ClassController {
     @GetMapping("/{id}")
     public ResponseEntity<Class> getClassById(@PathVariable Long id) {
         Optional<Class> classOptional = classService.getClassById(id);
+        if (classOptional.isPresent()) {
+            return ResponseEntity.ok(classOptional.get());
+        }
 
     }
 }
