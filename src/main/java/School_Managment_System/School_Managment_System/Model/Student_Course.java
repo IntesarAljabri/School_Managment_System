@@ -14,12 +14,14 @@ import javax.persistence.Table;
 @Getter
 @Table(name = "Student_Course")
 public class Student_Course {
-
+    String grade;
+    
     @OneToMany
     Course id;
 
     @OneToMany
     Student st_id;
+
 
 
 }
