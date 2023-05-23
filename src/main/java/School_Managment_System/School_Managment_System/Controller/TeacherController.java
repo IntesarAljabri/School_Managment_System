@@ -45,4 +45,6 @@ public class TeacherController {
         return ResponseEntity.notFound().build();
     }
     @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTeacher(@PathVariable Long id) {
+        Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
 }
