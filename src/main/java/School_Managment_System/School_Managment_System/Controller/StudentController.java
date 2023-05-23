@@ -30,7 +30,9 @@ public class StudentController {
     public Optional<Student> getStudentById(@RequestParam Long id) {
 
         return StudentService.getStudentById(id);
-    } @PostMapping(value = "add")
+    }
+
+    @PostMapping(value = "add")
     public String Student(@RequestBody Student student){
         StudentService.addStudent(student);
         return "Class added";

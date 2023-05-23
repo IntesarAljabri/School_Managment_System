@@ -1,6 +1,9 @@
 package School_Managment_System.School_Managment_System.Controller;
 
+import School_Managment_System.School_Managment_System.Model.Course;
 import School_Managment_System.School_Managment_System.Model.Teacher;
+import School_Managment_System.School_Managment_System.Service.CourseService;
+import School_Managment_System.School_Managment_System.Service.StudentService;
 import School_Managment_System.School_Managment_System.Service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,18 +19,17 @@ public class TeacherController {
     @Autowired
     TeacherService teacherService;
 
-    @GetMapping
-    public ResponseEntity<List<Teacher>> getAllTeachers() {
-        List<Teacher> teachers = teacherService.getAllTeachers();
-        return ResponseEntity.ok(teachers);
+    @GetMapping(value = "getAll")
+    public List<Teacher> getAllTeacher() {
+        return teacherService.getAllTeachers();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Teacher> getTeacherById(@PathVariable Long id) {
-        Optional<Teacher> teacher = teacherService.getTeacherById(id);
-        return teacher.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
-    }
+    @GetMapping(value = "getById")
+    public Optional<Teacher> getTeacherById(@RequestParam Long id) {
 
+        return TeacherService.getTeacherById(id);
+    }
+    
     @PostMapping
     public ResponseEntity<Teacher> createTeacher(@RequestBody Teacher teacher) {
         Teacher createdTeacher = teacherService.createTeacher(teacher);
