@@ -1,7 +1,9 @@
 package School_Managment_System.School_Managment_System.Controller;
 
+import School_Managment_System.School_Managment_System.Model.Course;
 import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Repository.StudentRepository;
+import School_Managment_System.School_Managment_System.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,13 +15,13 @@ import java.util.List;
 public class StudentController {
 
     @Autowired
-    StudentRepository studentRepository;
+    StudentService studentService;
 
-    @GetMapping
-    public ResponseEntity<List<Student>> getAllStudents() {
-        List<Student> students = studentRepository.findAll();
-        return ResponseEntity.ok(students);
+    @GetMapping(value = "getAll")
+    public List<Student> getAllStudent() {
+        return studentService.getAllStudents();
     }
+
 
     @PostMapping
     public ResponseEntity<Student> createStudent(@RequestBody Student student) {
