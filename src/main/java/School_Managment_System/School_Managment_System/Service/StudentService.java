@@ -5,6 +5,7 @@ import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Collections;
 import java.util.List;
@@ -14,13 +15,18 @@ import java.util.Optional;
 public class StudentService {
 
     @Autowired
-    private StudentRepository studentRepository;
+    private static StudentRepository studentRepository;
+
+    public static String addStudent(@RequestBody Student student) {
+        StudentService.addStudent(student);
+        return "Class added";
+    }
 
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
 
-    public Optional<Student> getStudentById(Long id) {
+    public static Optional<Student> getStudentById(Long id) {
         return studentRepository.findById(id);
     }
 
