@@ -37,6 +37,8 @@ public class ClassController {
     @PutMapping("/{id}")
     public ResponseEntity<Class> updateClass(@PathVariable Long id, @RequestBody Class updatedClass) {
         Optional<Class> existingClass = classService.getClassById(id);
+        if (existingClass.isPresent()) {
+            updatedClass.setId(id);
 }
 
 
