@@ -34,6 +34,9 @@ public class ClassController {
         Class createdClass = classService.createClass(newClass);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdClass);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Class> updateClass(@PathVariable Long id, @RequestBody Class updatedClass) {
+        Optional<Class> existingClass = classService.getClassById(id);
 }
 
 
