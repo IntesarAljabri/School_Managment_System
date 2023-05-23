@@ -39,6 +39,10 @@ public class ClassController {
         Optional<Class> existingClass = classService.getClassById(id);
         if (existingClass.isPresent()) {
             updatedClass.setId(id);
+            Class updated = classService.updateClass(updatedClass);
+            return ResponseEntity.ok(updated);
+        }
+    }
 }
 
 
