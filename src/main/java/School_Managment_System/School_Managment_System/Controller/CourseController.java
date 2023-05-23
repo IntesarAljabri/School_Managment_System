@@ -1,6 +1,7 @@
 package School_Managment_System.School_Managment_System.Controller;
 
 import School_Managment_System.School_Managment_System.Model.Course;
+import School_Managment_System.School_Managment_System.Service.ClassService;
 import School_Managment_System.School_Managment_System.Service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,11 +23,12 @@ public class CourseController {
         return courseService.getAllCourse();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Course> getCourseById(@PathVariable Long id) {
-        Optional<Course> course = courseService.getCourseById(id);
-        return course.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+    @GetMapping(value = "getById")
+    public Optional<Course> getCourseById(@RequestParam Long id) {
+
+        return CourseService.getCourseById(id);
     }
+
 
     @PostMapping
     public ResponseEntity<Course> createCourse(@RequestBody Course course) {

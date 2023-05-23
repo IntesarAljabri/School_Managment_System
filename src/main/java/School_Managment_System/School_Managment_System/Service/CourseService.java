@@ -13,7 +13,7 @@ public class CourseService {
     @Autowired
     CourseRepository courseRepository;
 
-    public List<Course> getAllCourses() {
+    public List<Course> getAllCourse() {
         return courseRepository.findAll();
     }
 
@@ -21,7 +21,7 @@ public class CourseService {
         return courseRepository.save(course);
     }
 
-    public Optional<Course> getCourseById(Long courseId) {
+    public static Optional<Course> getCourseById(Long courseId) {
         return courseRepository.findById(courseId);
     }
 

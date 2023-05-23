@@ -25,8 +25,8 @@ public class ClassController {
     }
 
     @PostMapping(value = "add")
-    public String addSchool_Class(@RequestBody Class school_class){
-       ClassService.addClass(school_class);
+    public String Class(@RequestBody Class class){
+       ClassService.addClass(class);
         return "Class added";
     }
 
