@@ -49,4 +49,6 @@ public class TeacherController {
         Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
         if (existingTeacher.isPresent()) {
             teacherService.deleteTeacher(id);
+            return ResponseEntity.noContent().build();
+        }
 }
