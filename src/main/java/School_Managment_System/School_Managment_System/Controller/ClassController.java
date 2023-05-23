@@ -46,6 +46,9 @@ public class ClassController {
     }
 
     @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteClass(@PathVariable Long id) {
+        
+    }
 }
 
 
