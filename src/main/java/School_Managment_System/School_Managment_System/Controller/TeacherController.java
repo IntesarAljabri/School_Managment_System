@@ -32,4 +32,8 @@ public class TeacherController {
         Teacher createdTeacher = teacherService.createTeacher(teacher);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTeacher);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {
+        Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
+        if (existingTeacher.isPresent()) {
 }
