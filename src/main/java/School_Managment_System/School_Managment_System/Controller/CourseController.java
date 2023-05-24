@@ -54,15 +54,11 @@ public class CourseController {
 //    }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
-        Optional<Course> existingCourse = courseService.getCourseById(id);
-        if (existingCourse.isPresent()) {
-            courseService.deleteCourse(id);
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<Object> deleteCourse(@PathVariable Long id) {
+        courseService.deleteCourse(id);
+        return ResponseEntity.noContent().build();
     }
-
+    
     @GetMapping("/{id}/students")
     public ResponseEntity<Optional<Course>> getStudentsByCourseId(@PathVariable Long id) {
         Optional<Course> students = courseService.getCourseById(id);
