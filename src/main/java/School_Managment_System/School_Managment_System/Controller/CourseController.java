@@ -1,8 +1,10 @@
 package School_Managment_System.School_Managment_System.Controller;
 
 import School_Managment_System.School_Managment_System.Model.Course;
+import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Service.ClassService;
 import School_Managment_System.School_Managment_System.Service.CourseService;
+import School_Managment_System.School_Managment_System.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,12 +31,16 @@ public class CourseController {
         return CourseService.getCourseById(id);
     }
 
-
-    @PostMapping
-    public ResponseEntity<Course> createCourse(@RequestBody Course course) {
-        Course createdCourse = courseService.createCourse(course);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdCourse);
+    @PostMapping(value = "add")
+    public String Course(@RequestBody Course course){
+        CourseService.addCourse(course);
+        return "Class added";
     }
+//    @PostMapping
+//    public ResponseEntity<Course> createCourse(@RequestBody Course course) {
+//        Course createdCourse = courseService.createCourse(course);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(createdCourse);
+//    }
 
     @PutMapping("/{id}")
     public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {

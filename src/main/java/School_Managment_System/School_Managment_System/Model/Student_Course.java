@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name = "Student_Course")
 public class Student_Course {
     String grade;
-    
+
     @OneToMany
     Course id;
 
