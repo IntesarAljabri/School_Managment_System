@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -16,12 +17,9 @@ import javax.persistence.Table;
 public class Student_Course {
     String grade;
 
-    @OneToMany
-    Course id;
+    @ManyToOne
+    Course course;
 
-    @OneToMany
-    Student st_id;
-
-
-
+    @ManyToOne
+    Student student;
 }
