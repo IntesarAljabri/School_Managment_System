@@ -22,9 +22,10 @@ public class CourseService {
     }
 
 
-    public Course createCourse(Course course) {
-        return courseRepository.save(course);
+    public Course getClassById(Long id) {
+        return classRepository.getById(id);
     }
+
 
     public static Optional<Course> getCourseById(Long courseId) {
         return courseRepository.findById(courseId);
