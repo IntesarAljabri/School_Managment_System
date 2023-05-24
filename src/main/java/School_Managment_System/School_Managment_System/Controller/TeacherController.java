@@ -47,6 +47,15 @@ public class TeacherController {
         teacherService.deleteTeacher(id);
         return teacherService.deleteTeacher(id);
     }
+    @PutMapping("{id}")
+    public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher updateData){
+        Teacher teachers = teacherService.updateTeacher(id, updateData);
+        if (teachers != null) {
+            return ResponseEntity.ok(teachers);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
 //    @PutMapping("/{id}")
 //    public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {
