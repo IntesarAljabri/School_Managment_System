@@ -32,25 +32,26 @@ public class CourseController {
     }
 
     @PostMapping(value = "add")
-    public String Course(@RequestBody Course course){
+    public String Course(@RequestBody Course course) {
         CourseService.addCourse(course);
         return "Class added";
     }
-//    @PostMapping
+
+    //    @PostMapping
 //    public ResponseEntity<Course> createCourse(@RequestBody Course course) {
 //        Course createdCourse = courseService.createCourse(course);
 //        return ResponseEntity.status(HttpStatus.CREATED).body(createdCourse);
 //    }
 //
-  @PutMapping("/{id}")
-  public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {
-     course.setId(id);
-     Course updatedCourse = courseService.updateCourse(course);
-     if (updatedCourse != null) {
-         return ResponseEntity.ok(updatedCourse);
-     }
-//    return ResponseEntity.notFound().build();
-}
+    @PutMapping("/{id}")
+    public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {
+        course.setId(id);
+        Course updatedCourse = courseService.updateCourse(course);
+//        if (updatedCourse != null) {
+//            return ResponseEntity.ok(updatedCourse);
+//        }
+    return ResponseEntity.notFound().build();
+    }
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteCourse(@PathVariable Long id) {
         courseService.deleteCourse(id);
