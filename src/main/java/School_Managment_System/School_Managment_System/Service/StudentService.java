@@ -15,6 +15,7 @@ public class StudentService {
     @Autowired
     private static StudentRepository studentRepository;
 
+    //Add new Student
     public Student addStudents(Student students) {
         return studentRepository.save(students);
     }
