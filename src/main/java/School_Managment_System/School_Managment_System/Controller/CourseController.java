@@ -41,17 +41,17 @@ public class CourseController {
 //        Course createdCourse = courseService.createCourse(course);
 //        return ResponseEntity.status(HttpStatus.CREATED).body(createdCourse);
 //    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {
-        Optional<Course> existingCourse = courseService.getCourseById(id);
-        if (existingCourse.isPresent()) {
-            course.setId(id);
-            Course updatedCourse = courseService.updateCourse(course);
-            return ResponseEntity.ok(updatedCourse);
-        }
-        return ResponseEntity.notFound().build();
-    }
+//
+//    @PutMapping("/{id}")
+//    public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {
+//        Optional<Course> existingCourse = courseService.getCourseById(id);
+//        if (existingCourse.isPresent()) {
+//            course.setId(id);
+//            Course updatedCourse = courseService.updateCourse(course);
+//            return ResponseEntity.ok(updatedCourse);
+//        }
+//        return ResponseEntity.notFound().build();
+//    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
