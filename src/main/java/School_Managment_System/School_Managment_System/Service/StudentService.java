@@ -1,7 +1,6 @@
 package School_Managment_System.School_Managment_System.Service;
 
 import School_Managment_System.School_Managment_System.Model.Student;
-import School_Managment_System.School_Managment_System.Model.Teacher;
 import School_Managment_System.School_Managment_System.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,13 +37,13 @@ public class StudentService {
         return "Deleted successfully";
     }
 
-    public Teacher updateStudent(Long id, Student updateData) {
+    public Student updateStudent(Long id, Student updateData) {
         Student students = studentRepository.findById(id).orElse(null);
         if (students != null) {
             students.setName(updateData.getName());
             students.setGender(updateData.getGender());
             students.setCourses(updateData.getCourses());
-            return studentRepository.save(student);
+            return studentRepository.save(students);
         }
         return null;
     }
