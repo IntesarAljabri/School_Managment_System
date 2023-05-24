@@ -42,16 +42,16 @@ public class TeacherController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTeacher);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {
-        Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
-        if (existingTeacher.isPresent()) {
-            teacher.setId(id);
-            Teacher updatedTeacher = teacherService.updateTeacher(teacher);
-            return ResponseEntity.ok(updatedTeacher);
-        }
-        return ResponseEntity.notFound().build();
-    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {
+//        Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
+//        if (existingTeacher.isPresent()) {
+//            teacher.setId(id);
+//            Teacher updatedTeacher = teacherService.updateTeacher(teacher);
+//            return ResponseEntity.ok(updatedTeacher);
+//        }
+//        return ResponseEntity.notFound().build();
+//    }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTeacher(@PathVariable Long id) {
         Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
