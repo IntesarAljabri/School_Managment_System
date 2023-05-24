@@ -33,7 +33,7 @@ public class StudentController {
     @PostMapping("/addStudent")
     public AddStudent addStudent (@RequestBody Student students){
         return studentServices.addStudent(students);
-        public AddStudents addStudent (@RequestBody AddStudent studentRequest){
+        public Addstudents addStudent (@RequestBody AddStudent studentRequest){
 
             Student savedStudent = studentServices.addStudent(students.convertToStudent());
 
@@ -47,11 +47,11 @@ public class StudentController {
             return response;
         }
 
-        @DeleteMapping("/{id}")
-        public String deleteStudent (@PathVariable Long id){
-            studentService.deleteStudent(id);
-            return studentService.deleteStudent(id);
-        }
+//        @DeleteMapping("/{id}")
+//        public String deleteStudent (@PathVariable Long id){
+//            studentService.deleteStudent(id);
+//            return studentService.deleteStudent(id);
+//        }
 
 //        @PutMapping("{id}")
 //        public ResponseEntity<Student> updateStudent (@PathVariable Long id, @RequestBody Student updateData){
