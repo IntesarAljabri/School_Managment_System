@@ -34,7 +34,7 @@ public class StudentController {
     public <AddStudent> ResponseEntity<Object> addStudent(@RequestBody AddStudent studentRequest) {
         Student savedStudent = studentService.addStudent(studentRequest.convertToStudent());
 
-        addStudent response = new addStudent(
+        AddStudent response = new AddStudent(
                 savedStudent.getId(),
                 savedStudent.getName(),
                 savedStudent.getNationality(),
