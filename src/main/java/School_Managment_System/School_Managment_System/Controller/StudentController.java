@@ -22,26 +22,18 @@ public class StudentController {
     StudentService studentService;
 
     @GetMapping(value = "getAll")
-    public List<Student> getAllStudent() {
+    public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
     @GetMapping(value = "getById")
-    public Optional<Student> getStudentById(@RequestParam Long id) {
-
-        return StudentService.getStudentById(id);
+    public Course getClassById(Long id) {
+        return courseService.getCourseById(id);
     }
 
     @PostMapping(value = "add")
-    public String Student(@RequestBody Student student){
-        StudentService.addStudent(student);
+    public String Course(@RequestBody Course courses) {
+        courseService.addCourse(courses);
         return "Class added";
     }
-
-
-//    @PostMapping
-//    public ResponseEntity<Student> createStudent(@RequestBody Student student) {
-//        Student savedStudent = studentService.save(student);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(savedStudent);
-//    }
 }

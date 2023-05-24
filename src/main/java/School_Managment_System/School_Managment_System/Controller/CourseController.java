@@ -32,19 +32,6 @@ public class CourseController {
         courseService.addCourse(courses);
         return "Class added";
     }
-
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Object> deleteCourse(@PathVariable Long id) {
-//        courseService.deleteCourse(id);
-//        return ResponseEntity.noContent().build();
-//    }
-
-    //    @PostMapping
-//    public ResponseEntity<Course> createCourse(@RequestBody Course course) {
-//        Course createdCourse = courseService.createCourse(course);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(createdCourse);
-//    }
-//
     @PutMapping("/{id}")
     public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {
         course.setId(id);
