@@ -38,8 +38,9 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public void deleteStudent(Long id) {
+    public String deleteStudent(Long id) {
         studentRepository.deleteById(id);
+        return "Deleted successfully";
     }
 
     public List<Course> getCoursesByStudentId(Long id) {
