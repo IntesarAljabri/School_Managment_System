@@ -20,7 +20,7 @@ public class Teacher {
     String gender;
     String course;
 
-    // Define the relationship with Course
+  
     @ManyToOne
     private Course courses;
 }

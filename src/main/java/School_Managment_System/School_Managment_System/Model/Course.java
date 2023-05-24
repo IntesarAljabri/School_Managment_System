@@ -20,11 +20,10 @@ public class Course {
     private Long id;
     String course_name;
     String grade;
-    // Define the relationship with Student
+
     @OneToMany
     private List<Student> students;
 
-    // Define the relationship with Teacher
     @OneToMany
     private List<Teacher> teachers;
 
