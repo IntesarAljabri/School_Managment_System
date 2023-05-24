@@ -25,16 +25,10 @@ public class ClassController {
         return ClassService.getClassById(id);
     }
 
-//    @PostMapping(value = "add")
-//    public String Class(@RequestBody Class class) {
-//        ClassService.addClass( class);
-//        return "Class added";
-//    }
-    @PostMapping
-    public ResponseEntity<Class> createClass(@RequestBody Class newClass) {
-
-        Class createdClass = classService.createClass(newClass);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdClass);
+    @PostMapping(value = "add")
+    public String Class(@RequestBody Class classes) {
+        ClassService.addClass( classes);
+        return "Class added";
     }
 
     @DeleteMapping("/{id}")
