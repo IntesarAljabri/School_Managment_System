@@ -15,10 +15,10 @@ public class StudentService {
     @Autowired
     private static StudentRepository studentRepository;
 
-    public static String addStudent(@RequestBody Student student) {
-        StudentService.addStudent(student);
-        return "Class added";
+    public Student addStudents(Student students) {
+        return studentRepository.save(students);
     }
+
 
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
