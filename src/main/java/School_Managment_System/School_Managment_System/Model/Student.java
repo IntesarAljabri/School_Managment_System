@@ -21,9 +21,9 @@ public class Student {
     // Define the relationship with Course
     // Define the relationship with Class
     @ManyToOne
-     Class classes;
+    Classroom classes;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany
     List<Course> courses;
 
 }

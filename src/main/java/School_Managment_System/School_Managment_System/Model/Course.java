@@ -21,11 +21,11 @@ public class Course {
     String course_name;
     String grade;
     // Define the relationship with Student
-    @OneToMany(mappedBy = "course")
+    @OneToMany
     private List<Student> students;
 
     // Define the relationship with Teacher
-    @OneToMany(mappedBy = "course")
+    @OneToMany
     private List<Teacher> teachers;
 
 }

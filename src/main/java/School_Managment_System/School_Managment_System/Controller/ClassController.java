@@ -1,33 +1,31 @@
 package School_Managment_System.School_Managment_System.Controller;
 
+import School_Managment_System.School_Managment_System.Model.Classroom;
 import School_Managment_System.School_Managment_System.Service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("/classes")
+@RequestMapping(value ="Classes")
 public class ClassController {
     @Autowired
     ClassService classService;
 
     @GetMapping(value = "getAll")
-    public List<Class> getAllClasses() {
-        return classService.getAllClass();
+    public List<Classroom> getAllClasses() {
+        return classService.getAllClasses();
     }
 
     @GetMapping(value = "getById")
-    public Optional<Class> getClassById(@RequestParam Long id) {
-
-        return ClassService.getClassById(id);
+    public Classroom getClassById( Long id) {
+        return classService.getClassroomtById(id);
     }
 
     @PostMapping(value = "add")
-    public String Class(@RequestBody Class classes) {
-        ClassService.addClass( classes);
+    public String Class(@RequestBody Classroom classes) {
+        classService.addClass(classes);
         return "Class added";
     }
 

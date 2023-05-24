@@ -1,37 +1,40 @@
 package School_Managment_System.School_Managment_System.Service;
 
+import School_Managment_System.School_Managment_System.Model.Classroom;
 import School_Managment_System.School_Managment_System.Repository.ClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ClassService {
 
     @Autowired
-    static
     ClassRepository classRepository;
-    public List<Class> getAllClass() {
-
+    public List<Classroom> getAllClasses() {
         return classRepository.findAll();
     }
 
-    public static Optional<Class> getClassById(Long id) {
-        return Optional.of(classRepository.getById(id));
+    public Classroom getClassById(Long id) {
+        return classRepository.getById(id);
     }
 
-    public Class createClass(Class newClass) {
-        return classRepository.save(newClass);
+    public Classroom createClass(Classroom newClassroom) {
+        return classRepository.save(newClassroom);
     }
 
-    public static void addClass(Class Class){
-
-        classRepository.save(Class);
+    public Classroom getClassroomtById(Long id) {
+        return classRepository.findById(id).get();
     }
     public void deleteClass(Long id) {
         classRepository.deleteById(id);
     }
+
+    public Classroom addClass(Classroom classes) {
+        return classRepository.save(classes);
+    }
+
+}
 //    @Autowired
 //    ClassRepository classRepository;
 //
@@ -44,5 +47,3 @@ public class ClassService {
 //        return classRepository.save(updatedClass);
 //    }
 
-
-}

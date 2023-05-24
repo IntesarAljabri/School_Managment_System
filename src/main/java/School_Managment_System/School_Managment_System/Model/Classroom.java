@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Entity
 @Table(name = "Class")
-public class Class {
+public class Classroom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class Class {
     String classCode;
 
     // Define the relationship with Student
-    @OneToMany(mappedBy = "class")
+    @OneToMany
     private List<Student> students;
 
 }
