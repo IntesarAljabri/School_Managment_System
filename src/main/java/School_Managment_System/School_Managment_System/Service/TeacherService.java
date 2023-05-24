@@ -24,8 +24,8 @@ public class TeacherService {
         return teacherRepository.findAll();
     }
 
-    public static Optional<Teacher> getTeacherById(Long id) {
-        return teacherRepository.findById(id);
+    public Teacher getTeacherById(Long id) {
+        return teacherRepository.findById(id).get();
     }
 
     public Teacher createTeacher(Teacher teacher) {
