@@ -40,7 +40,9 @@ public class StudentService {
 
     public Teacher updateStudent(Long id, Student updateData) {
         Student students = studentRepository.findById(id).orElse(null);
+        if (students != null) {
 
+        }
     }
 
 }
