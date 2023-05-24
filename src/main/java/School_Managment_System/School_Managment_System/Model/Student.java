@@ -21,7 +21,6 @@ public class Student {
 
     @ManyToOne
     Classroom classes;
-
     @OneToMany
     List<Course> courses;
 

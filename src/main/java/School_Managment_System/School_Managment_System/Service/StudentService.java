@@ -43,9 +43,4 @@ public class StudentService {
         return "Deleted successfully";
     }
 
-    public List<Course> getCoursesByStudentId(Long id) {
-        Optional<Student> student = studentRepository.findById(id);
-        return student.map(Student::getCourses).orElse(Collections.emptyList());
-    }
-
 }

@@ -22,7 +22,6 @@ public class TeacherService {
     public List<Teacher> getAllTeachers() {
         return teacherRepository.findAll();
     }
-
     public Teacher getTeacherById(Long id) {
         return teacherRepository.findById(id).get();
     }

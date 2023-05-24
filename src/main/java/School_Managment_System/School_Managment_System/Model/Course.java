@@ -23,7 +23,6 @@ public class Course {
 
     @OneToMany
     private List<Student> students;
-
     @OneToMany
     private List<Teacher> teachers;
 

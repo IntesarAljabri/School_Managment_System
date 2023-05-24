@@ -28,7 +28,6 @@ public class CourseService {
         courseRepository.deleteById(courseId);
         return "successfully Deleted";
     }
-
     public Course updateCourse(Course course) {return courseRepository.save(course);}
 
 }

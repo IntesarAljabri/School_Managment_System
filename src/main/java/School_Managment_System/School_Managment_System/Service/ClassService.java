@@ -19,10 +19,6 @@ public class ClassService {
         return classRepository.getById(id);
     }
 
-//    public Classroom createClass(Classroom newClassroom) {
-//        return classRepository.save(newClassroom);
-//    }
-
     public Classroom getClassroomtById(Long id) {
         return classRepository.findById(id).get();
     }
@@ -35,15 +31,3 @@ public class ClassService {
     }
 
 }
-//    @Autowired
-//    ClassRepository classRepository;
-//
-//    public List<Class> getAllClasses() {
-//        return classRepository.findAll();
-//    }
-
-
-//    public Class updateClass(Class updatedClass) {
-//        return classRepository.save(updatedClass);
-//    }
-

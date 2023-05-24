@@ -20,7 +20,6 @@ public class Classroom {
     Integer size;
     String classCode;
 
-
     @OneToMany
     private List<Student> students;
 
