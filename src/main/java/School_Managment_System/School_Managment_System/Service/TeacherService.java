@@ -30,12 +30,23 @@ public class TeacherService {
         return teacherRepository.save(teacher);
     }
 
-    public Teacher updateTeacher(Long id, Teacher teacher) {
-        return teacherRepository.save(teacher);
-    }
-
     public String deleteTeacher(Long id) {
         teacherRepository.deleteById(id);
         return "Deleted  Successfully";
+    }
+
+    public Teacher updateTeacher(Long id, Teacher updateData){
+        Teacher teacher = teacherRepository.findById(id).orElse(null);
+
+        if (teacher != null) {
+            teacher.setName(updateData.getName());
+            teacher.setAge(updateData.getAge());
+            teacher.setMajor(updateData.getMajor());
+            teacher.setGender(updateData.getGender());
+            teacher.setCourses(updateData.getCourses());
+
+            return teacherRepository.save(teacher);
+        }
+        return null;
     }
 }
