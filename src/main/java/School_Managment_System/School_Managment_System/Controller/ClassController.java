@@ -17,7 +17,6 @@ public class ClassController {
     public List<Classroom> getAllClasses() {
         return classService.getAllClasses();
     }
-
     @GetMapping(value = "getById")
     public Classroom getClassById( Long id) {
         return classService.getClassroomtById(id);

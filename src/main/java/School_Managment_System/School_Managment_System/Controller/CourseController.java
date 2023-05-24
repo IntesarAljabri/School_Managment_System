@@ -14,7 +14,6 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-
     @GetMapping(value = "getAll")
     public List<Course> getAllCourse() {
         return courseService.getAllCourse();

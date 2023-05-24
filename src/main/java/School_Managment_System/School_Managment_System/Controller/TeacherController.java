@@ -35,11 +35,6 @@ public class TeacherController {
         TeacherService.addTeachers(teacher);
         return "Class added";
     }
-    @PostMapping
-    public ResponseEntity<Teacher> createTeacher(@RequestBody Teacher teacher) {
-        Teacher createdTeacher = teacherService.createTeacher(teacher);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdTeacher);
-    }
 
     @DeleteMapping("/{id}")
     public String deleteTeacher(@PathVariable Long id) {
