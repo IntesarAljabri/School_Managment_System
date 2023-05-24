@@ -31,18 +31,21 @@ public class StudentController {
 //        return "Class added";
 //    }
     @PostMapping("/addStudent")
-    public ResponseEntity<Object> addStudent(@RequestBody AddStudent studentRequest) {
-        Student savedStudent = studentService.addStudents(studentRequest.convertToStudent());
+    public AddStudent addStudent (@RequestBody Student students){
+        return studentServices.addStudent(students);
+        public AddStudents addStudent (@RequestBody AddStudent studentRequest){
 
-        AddStudent response = new AddStudent(
-                savedStudent.getId(),
-                savedStudent.getName(),
-                savedStudent.getNationality(),
-                savedStudent.getCreatedDate()
-        );
+            Student savedStudent = studentServices.addStudent(students.convertToStudent());
 
-        return ResponseEntity.ok(response);
-    }
+            AddStudent response = new AddStudents(
+                    savedStudent.getId(),
+                    savedStudent.getName(),
+                    savedStudent.getNationality(),
+                    savedStudent.getCreatedDate()
+            );
+
+            return response;
+        }
 
         @DeleteMapping("/{id}")
         public String deleteStudent (@PathVariable Long id){
@@ -50,14 +53,14 @@ public class StudentController {
             return studentService.deleteStudent(id);
         }
 
-        @PutMapping("{id}")
-        public ResponseEntity<Student> updateStudent (@PathVariable Long id, @RequestBody Student updateData){
-            Student students = studentService.updateStudent(id, updateData);
-            if (students != null) {
-                return ResponseEntity.ok(students);
-            } else {
-                return ResponseEntity.notFound().build();
-            }
-        }
+//        @PutMapping("{id}")
+//        public ResponseEntity<Student> updateStudent (@PathVariable Long id, @RequestBody Student updateData){
+//            Student students = studentService.updateStudent(id, updateData);
+//            if (students != null) {
+//                return ResponseEntity.ok(students);
+//            } else {
+//                return ResponseEntity.notFound().build();
+//            }
+//        }
     }
 }

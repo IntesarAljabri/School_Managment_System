@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Student")
-public class Student {
+public class Student{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,5 +30,14 @@ public class Student {
     Classroom classes;
     @OneToMany
     List<Course> courses;
+
+    public Student convertToStudents() {
+
+        // You don't need to implement this method here. It's just a placeholder in your provided code.
+        return this;
+    }
+
+
+}
 
 }
