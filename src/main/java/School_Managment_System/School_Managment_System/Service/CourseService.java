@@ -1,6 +1,8 @@
 package School_Managment_System.School_Managment_System.Service;
 
+import School_Managment_System.School_Managment_System.Model.Classroom;
 import School_Managment_System.School_Managment_System.Model.Course;
+import School_Managment_System.School_Managment_System.Repository.ClassRepository;
 import School_Managment_System.School_Managment_System.Repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,14 +17,10 @@ public class CourseService {
     static
     CourseRepository courseRepository;
 
-    public static String addCourse(@RequestBody Course course) {
-        CourseService.addCourse(course);
-        return "Class added";
-    }
-
     public List<Course> getAllCourse() {
         return courseRepository.findAll();
     }
+
 
     public Course createCourse(Course course) {
         return courseRepository.save(course);
