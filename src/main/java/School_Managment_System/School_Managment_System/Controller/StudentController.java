@@ -23,7 +23,7 @@ public class StudentController {
 
     @GetMapping(value = "getById")
     public Student getStudentById(Long id) {
-        return studentService.getStudentById(id);
+        return studentService.getStudentById(id).get();
     }
 
     @PostMapping(value = "add")
