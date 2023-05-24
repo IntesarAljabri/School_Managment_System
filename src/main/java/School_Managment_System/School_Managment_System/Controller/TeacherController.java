@@ -26,10 +26,10 @@ public class TeacherController {
     }
 
     @GetMapping(value = "getById")
-    public Optional<Teacher> getTeacherById(@RequestParam Long id) {
-
-        return TeacherService.getTeacherById(id);
+    public Teacher getTeacherById(@RequestParam Long id) {
+        return teacherService.getTeacherById(id).get();
     }
+
     @PostMapping(value = "add")
     public String Teacher(@RequestBody Teacher teacher){
         TeacherService.addTeachers(teacher);
