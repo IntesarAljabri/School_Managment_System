@@ -35,7 +35,6 @@ public class TeacherController {
         TeacherService.addTeachers(teacher);
         return "Class added";
     }
-
     @PostMapping
     public ResponseEntity<Teacher> createTeacher(@RequestBody Teacher teacher) {
         Teacher createdTeacher = teacherService.createTeacher(teacher);
@@ -49,7 +48,7 @@ public class TeacherController {
     }
     @PutMapping("{id}")
     public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher updateData){
-        Teacher teachers = teacherService.updateTeacher(id, updateData);
+        Teacher teachers = teacherService.updateTeacher(id , updateData);
         if (teachers != null) {
             return ResponseEntity.ok(teachers);
         } else {
@@ -57,14 +56,5 @@ public class TeacherController {
         }
     }
 }
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {
-//        Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
-//        if (existingTeacher.isPresent()) {
-//            teacher.setId(id);
-//            Teacher updatedTeacher = teacherService.updateTeacher(teacher);
-//            return ResponseEntity.ok(updatedTeacher);
-//        }
-//        return ResponseEntity.notFound().build();
-//    }
+
 

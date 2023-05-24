@@ -30,7 +30,7 @@ public class TeacherService {
         return teacherRepository.save(teacher);
     }
 
-    public Teacher updateTeacher(Teacher teacher) {
+    public Teacher updateTeacher(Long id, Teacher teacher) {
         return teacherRepository.save(teacher);
     }
 
