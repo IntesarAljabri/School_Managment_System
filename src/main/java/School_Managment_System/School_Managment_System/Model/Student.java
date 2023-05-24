@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Student")
-public class Student{
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,13 +31,18 @@ public class Student{
     @OneToMany
     List<Course> courses;
 
-    public Student convertToStudents() {
-
-        // You don't need to implement this method here. It's just a placeholder in your provided code.
-        return this;
+    public Student convertToStudent(String name, String gender, String nationality, String grade, Date createdDate,
+                                    Boolean isActive, Date updatedDate, Classroom classes, List<Course> courses) {
+        this.name = name;
+        this.gender = gender;
+        this.nationality = nationality;
+        this.grade = grade;
+        this.createdDate = createdDate;
+        this.isActive = isActive;
+        this.updatedDate = updatedDate;
+        this.classes = classes;
+        this.courses = courses;
     }
 
-
 }
 
-}
