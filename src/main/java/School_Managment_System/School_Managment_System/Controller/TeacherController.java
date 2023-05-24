@@ -27,11 +27,11 @@ public class TeacherController {
 
     @GetMapping(value = "getById")
     public Teacher getTeacherById(@RequestParam Long id) {
-        return teacherService.getTeacherById(id).get();
+        return teacherService.getTeacherById(id);
     }
 
     @PostMapping(value = "add")
-    public String Teacher(@RequestBody Teacher teacher){
+    public String Teacher(@RequestBody Teacher teacher) {
         TeacherService.addTeachers(teacher);
         return "Class added";
     }
@@ -42,6 +42,12 @@ public class TeacherController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTeacher);
     }
 
+    @DeleteMapping("/{id}")
+    public String deleteTeacher(@PathVariable Long id) {
+        teacherService.deleteTeacher(id);
+        return teacherService.deleteTeacher(id);
+    }
+}
 //    @PutMapping("/{id}")
 //    public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {
 //        Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
@@ -52,13 +58,4 @@ public class TeacherController {
 //        }
 //        return ResponseEntity.notFound().build();
 //    }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteTeacher(@PathVariable Long id) {
-        Optional<Teacher> existingTeacher = teacherService.getTeacherById(id);
-        if (existingTeacher.isPresent()) {
-            teacherService.deleteTeacher(id);
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
-    }
-}
+

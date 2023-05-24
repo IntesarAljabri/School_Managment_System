@@ -1,6 +1,5 @@
 package School_Managment_System.School_Managment_System.Controller;
 
-import School_Managment_System.School_Managment_System.Model.Classroom;
 import School_Managment_System.School_Managment_System.Model.Course;
 import School_Managment_System.School_Managment_System.Service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/courses")
@@ -42,7 +40,7 @@ public class CourseController {
     return ResponseEntity.notFound().build();
     }
     @DeleteMapping("/{id}")
-    public Course deleteCourse(@PathVariable Long id) {
+    public String deleteCourse(@PathVariable Long id) {
         courseService.deleteCourse(id);
         return courseService.deleteCourse(id);
     }

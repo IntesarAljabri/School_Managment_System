@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TeacherService {
@@ -36,7 +35,8 @@ public class TeacherService {
         return teacherRepository.save(teacher);
     }
 
-    public void deleteTeacher(Long id) {
+    public String deleteTeacher(Long id) {
         teacherRepository.deleteById(id);
+        return "Deleted  Successfully";
     }
 }
