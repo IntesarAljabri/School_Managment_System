@@ -22,15 +22,13 @@ public class CourseService {
     }
 
 
-    public Course getClassById(Long id) {
-        return classRepository.getById(id);
+    public Course getCourseById(Long id) {
+        return courseRepository.getById(id);
     }
 
-
-    public static Optional<Course> getCourseById(Long courseId) {
-        return courseRepository.findById(courseId);
+    public Course addCourse(Course courses) {
+        return courseRepository.save(courses);
     }
-
     public void deleteCourse(Long courseId) {
         courseRepository.deleteById(courseId);
     }

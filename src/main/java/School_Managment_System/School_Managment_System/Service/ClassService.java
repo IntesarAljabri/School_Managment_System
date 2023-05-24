@@ -19,9 +19,9 @@ public class ClassService {
         return classRepository.getById(id);
     }
 
-    public Classroom createClass(Classroom newClassroom) {
-        return classRepository.save(newClassroom);
-    }
+//    public Classroom createClass(Classroom newClassroom) {
+//        return classRepository.save(newClassroom);
+//    }
 
     public Classroom getClassroomtById(Long id) {
         return classRepository.findById(id).get();

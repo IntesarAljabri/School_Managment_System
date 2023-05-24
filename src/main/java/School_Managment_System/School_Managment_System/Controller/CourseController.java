@@ -28,16 +28,16 @@ public class CourseController {
     }
 
     @PostMapping(value = "add")
-    public String Course(@RequestBody Course course) {
-        courseService.addCourse(course);
+    public String Course(@RequestBody Course courses) {
+        courseService.addCourse(courses);
         return "Class added";
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteCourse(@PathVariable Long id) {
-        courseService.deleteCourse(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Object> deleteCourse(@PathVariable Long id) {
+//        courseService.deleteCourse(id);
+//        return ResponseEntity.noContent().build();
+//    }
 
     //    @PostMapping
 //    public ResponseEntity<Course> createCourse(@RequestBody Course course) {
@@ -58,11 +58,5 @@ public class CourseController {
     public ResponseEntity<Object> deleteCourse(@PathVariable Long id) {
         courseService.deleteCourse(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @GetMapping("/{id}/students")
-    public ResponseEntity<Optional<Course>> getStudentsByCourseId(@PathVariable Long id) {
-        Optional<Course> students = courseService.getCourseById(id);
-        return ResponseEntity.ok(students);
     }
 }
