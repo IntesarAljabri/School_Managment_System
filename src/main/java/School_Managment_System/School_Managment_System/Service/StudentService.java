@@ -4,7 +4,6 @@ import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +15,7 @@ public class StudentService {
     private static StudentRepository studentRepository;
 
     //Add new Student
-    public Student addStudent(Student students) {
+    public Student addStudent(String students) {
         return studentRepository.save(students);
     }
 

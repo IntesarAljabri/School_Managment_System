@@ -32,7 +32,7 @@ public class StudentController {
 //    }
     @PostMapping("/addStudent")
     public <AddStudent> ResponseEntity<Object> addStudent(@RequestBody AddStudent studentRequest) {
-        Student savedStudent = studentService.addStudent(studentRequest.convertToStudent());
+        Student savedStudent = studentService.addStudent(studentRequest.toString());
 
         AddStudent response = new AddStudent(
                 savedStudent.getId(),
