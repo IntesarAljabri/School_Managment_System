@@ -22,8 +22,6 @@ public class Student extends BaseEntity{
     String gender;
     Integer age;
     String email;
-    private String nationality;
-
 
     @ManyToOne
     Classroom classes;

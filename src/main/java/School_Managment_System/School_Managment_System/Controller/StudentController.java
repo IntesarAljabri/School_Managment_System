@@ -32,19 +32,19 @@ public class StudentController {
 //        studentService.addStudent(String.valueOf(students));
 //        return "Class added";
 //}
-@PostMapping("/addStudent")
-public ResponseEntity<StudentResponse> addStudent(@RequestBody StudentRequest studentRequest) {
-    Student savedStudent = studentService.addStudent(studentRequest.convertToStudent());
 
-    StudentResponse response = new StudentResponse(
-            savedStudent.getId(),
-            savedStudent.getName(),
-            savedStudent.getNationality(),
-            savedStudent.getCreatedDate()
-    );
+    @PostMapping("/addStudent")
+    public StudentResponse addStudent (@RequestBody StudentRequest studentRequest){
 
-    return ResponseEntity.ok(response);
-}
+        Student savedStudent = studentService.addStudent(studentRequest.convertToStudent());
+
+        StudentResponse response = new StudentResponse(
+                savedStudent.getId(),
+                savedStudent.getName(),
+                savedStudent.getAge(),
+                savedStudent.getGender(),
+                savedStudent.getEmail()
+        );
 
         return response;
     }
