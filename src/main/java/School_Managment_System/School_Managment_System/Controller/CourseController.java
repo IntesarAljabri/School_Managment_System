@@ -1,7 +1,6 @@
 package School_Managment_System.School_Managment_System.Controller;
 
 import School_Managment_System.School_Managment_System.Model.Course;
-import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,9 +30,9 @@ public class CourseController {
         return "Class added";
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Student> updateCourse(@PathVariable Long id, @RequestBody Course courses) {
+    public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course courses) {
         courses.setId(id);
-        Student updatedCourse = courseService.updateCourse(courses);
+        Course updatedCourse = courseService.updateCourse(courses);
 
         if (updatedCourse != null) {
             return ResponseEntity.ok(updatedCourse);

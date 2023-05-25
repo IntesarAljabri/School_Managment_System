@@ -32,7 +32,7 @@ public class ClassService {
         return classRepository.save(classes);
     }
 
-    public Classroom updateClass(Long id, Class updateData) {
+    public Classroom updateClass(Class updateData) {
         Classroom classroom = classRepository.findById(id).orElse(null);
         if (classroom != null) {
             classroom.setClassCode(Arrays.toString(updateData.getClasses()));
