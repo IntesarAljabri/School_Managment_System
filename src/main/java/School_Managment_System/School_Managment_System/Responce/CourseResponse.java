@@ -25,6 +25,6 @@ public class CourseResponse {
         Date nowDate = new Date();
         Course course = new Course();
         course.setCourse_name(this.getCourse_name());
-
+        course.setDescription(this.getDescription());
 
 }
