@@ -2,18 +2,20 @@ package School_Managment_System.School_Managment_System.Request;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 @PostMapping("/addStudent")
-public StudentResponse addStudent(@RequestBody StudentRequest studentRequest) {
-        Student savedStudent = studentServices.addStudent(studentRequest.convertToStudent());
+public class StudentRequest {
 
-        StudentResponse response = new StudentResponse(
-        savedStudent.getId(),
-        savedStudent.getName(),
-        savedStudent.getAge(),
-        savedStudent.getGender(),
-        savedStudent.getEmail(),
-        savedStudent.getCreatedDate());
+    private Long id;
+    String name;
+    String gender;
+    Integer age;
+    String email;
+    private String nationality;
 
-        return response;
-        }
+
+    public Object convertToStudent() {
+
+    }
+}
+
+
