@@ -13,10 +13,8 @@ public class StudentCourse {
     private Long id;
 
     String garde;
-
     @OneToMany
     List<Course> courses;
-
     @OneToMany
     private List<Student> students;
 }

@@ -29,6 +29,13 @@ public class CourseController {
         courseService.addCourse(courses);
         return "Class added";
     }
+
+    @DeleteMapping("/{id}")
+    public String deleteCourse(@PathVariable Long id) {
+        courseService.deleteCourse(id);
+        return courseService.deleteCourse(id);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course courses) {
         courses.setId(id);
@@ -39,11 +46,5 @@ public class CourseController {
         }
 
         return ResponseEntity.notFound().build();
-    }
-
-    @DeleteMapping("/{id}")
-    public String deleteCourse(@PathVariable Long id) {
-        courseService.deleteCourse(id);
-        return courseService.deleteCourse(id);
     }
 }
