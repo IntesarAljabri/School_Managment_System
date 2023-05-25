@@ -12,11 +12,11 @@ import java.util.Optional;
 public class StudentService {
 
     @Autowired
-    private  StudentRepository studentRepository;
+    private StudentRepository studentRepository;
 
     //Add new Student
-    public Student addStudents(String students) {
-        return studentRepository.save(students);
+    public Student addStudents(String student) {
+        return studentRepository.save(student);
     }
 
 

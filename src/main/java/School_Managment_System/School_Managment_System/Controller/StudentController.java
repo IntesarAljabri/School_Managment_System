@@ -25,42 +25,24 @@ public class StudentController {
         return studentService.getStudentById(id).get();
     }
 
-    //    @PostMapping(value = "add")
-//    public String Student(@RequestBody Student students) {
-//        studentService.addStudent(students);
-//        return "Class added";
-//    }
-    @PostMapping("/addStudent")
-    public AddStudent addStudent (@RequestBody Student students){
-        return studentServices.addStudent(students);
-        public Addstudents addStudent (@RequestBody AddStudent studentRequest){
-
-            Student savedStudent = studentService.addStudent(students.convertToStudent());
-
-            AddStudent response = new AddStudents(
-                    savedStudent.getId(),
-                    savedStudent.getName(),
-                    savedStudent.getNationality(),
-                    savedStudent.getCreatedDate()
-            );
-
-            return response;
+        @PostMapping(value = "add")
+    public String Student(@RequestBody Student students) {
+        studentService.addStudents(String.valueOf(students));
+        return "Class added";
+}
+        @DeleteMapping("/{id}")
+        public String deleteStudent (@PathVariable Long id){
+            studentService.deleteStudent(id);
+            return studentService.deleteStudent(id);
         }
 
-//        @DeleteMapping("/{id}")
-//        public String deleteStudent (@PathVariable Long id){
-//            studentService.deleteStudent(id);
-//            return studentService.deleteStudent(id);
-//        }
-
-//        @PutMapping("{id}")
-//        public ResponseEntity<Student> updateStudent (@PathVariable Long id, @RequestBody Student updateData){
-//            Student students = studentService.updateStudent(id, updateData);
-//            if (students != null) {
-//                return ResponseEntity.ok(students);
-//            } else {
-//                return ResponseEntity.notFound().build();
-//            }
-//        }
+        @PutMapping("{id}")
+        public ResponseEntity<Student> updateStudent (@PathVariable Long id, @RequestBody Student updateData){
+            Student students = studentService.updateStudent(id, updateData);
+            if (students != null) {
+                return ResponseEntity.ok(students);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        }
     }
-}
