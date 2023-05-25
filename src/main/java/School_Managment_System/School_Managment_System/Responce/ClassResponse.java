@@ -24,6 +24,10 @@ public class ClassResponse {
         Date nowDate = new Date();
         Classroom classroom = new Classroom();
         classroom.setSize(this.getSize());
-   
+        classroom.setClassCode(this.getClassCode());
+
+        classroom.setIsActive(true);
+        
+    }
 
 }
