@@ -18,8 +18,9 @@ public class ClassController {
     public List<Classroom> getAllClasses() {
         return classService.getAllClasses();
     }
+
     @GetMapping(value = "getById")
-    public Classroom getClassById( Long id) {
+    public Classroom getClassById(Long id) {
         return classService.getClassroomtById(id);
     }
 
@@ -46,6 +47,7 @@ public class ClassController {
 
         return ResponseEntity.notFound().build();
     }
+}
 
 
 
