@@ -10,4 +10,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClassRequest {
+
+    private Long id;
+    private Integer size;
+    private String classCode;
 }
