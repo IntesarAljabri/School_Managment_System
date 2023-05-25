@@ -29,7 +29,7 @@ public class CourseService {
         courseRepository.deleteById(courseId);
         return "successfully Deleted";
     }
-    public Student updateCourse(Long id, Course updateData) {
+    public Student updateCourse(Course updateData) {
         Course courses = courseRepository.findById(id).orElse(null);
         if (courses != null) {
             courses.setCourse_name(updateData.getCourse_name());

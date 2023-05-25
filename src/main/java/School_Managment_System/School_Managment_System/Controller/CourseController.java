@@ -1,6 +1,7 @@
 package School_Managment_System.School_Managment_System.Controller;
 
 import School_Managment_System.School_Managment_System.Model.Course;
+import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,14 +31,17 @@ public class CourseController {
         return "Class added";
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {
-        course.setId(id);
-        Course updatedCourse = courseService.updateCourse(course);
-//        if (updatedCourse != null) {
-//            return ResponseEntity.ok(updatedCourse);
-//        }
-    return ResponseEntity.notFound().build();
+    public ResponseEntity<Student> updateCourse(@PathVariable Long id, @RequestBody Course courses) {
+        courses.setId(id);
+        Student updatedCourse = courseService.updateCourse(courses);
+
+        if (updatedCourse != null) {
+            return ResponseEntity.ok(updatedCourse);
+        }
+
+        return ResponseEntity.notFound().build();
     }
+    
     @DeleteMapping("/{id}")
     public String deleteCourse(@PathVariable Long id) {
         courseService.deleteCourse(id);
