@@ -36,10 +36,9 @@ public class ClassService {
         Classroom classroom = classRepository.findById(id).orElse(null);
         if (classroom != null) {
             classroom.setClassCode(Arrays.toString(updateData.getClasses()));
-            classroom.setSize(updateData.getSize());
+
             return classRepository.save(classroom);
         }
         return null;
     }
-
 }
