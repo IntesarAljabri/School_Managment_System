@@ -28,6 +28,8 @@ public class CourseResponse {
         course.setDescription(this.getDescription());
         course.setCode(this.getCode());
         course.setIsActive(true);
+        course.setCreatedDate(nowDate);
 
+    }
 
 }
