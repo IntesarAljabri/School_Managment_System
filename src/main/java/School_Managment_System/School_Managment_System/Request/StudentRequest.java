@@ -18,7 +18,6 @@ public class StudentRequest {
     private String gender;
     private int age;
     private String email;
-    private Date createdDate;
 
 
     public String convertToStudent () {
