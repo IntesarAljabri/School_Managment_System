@@ -18,6 +18,10 @@ public class CourseController {
     public List<Course> getAllCourse() {
         return courseService.getAllCourse();
     }
+    @GetMapping(value = "getAllActive")
+    public List<Course> getAllCourseActive() {
+        return courseService.softDelete();
+    }
 
     @GetMapping(value = "getById")
     public Course getClassById(Long id) {

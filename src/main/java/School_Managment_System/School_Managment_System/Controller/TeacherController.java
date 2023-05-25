@@ -55,13 +55,12 @@ public class TeacherController {
         return response;
     }
 
-
-
     @DeleteMapping("/{id}")
     public String deleteTeacher(@PathVariable Long id) {
         teacherService.deleteTeacher(id);
         return teacherService.deleteTeacher(id);
     }
+
     @PutMapping("{id}")
     public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher updateData){
         Teacher teachers = teacherService.updateTeacher(id , updateData);

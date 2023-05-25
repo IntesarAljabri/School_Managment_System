@@ -39,4 +39,8 @@ public class CourseService {
         }
         return null;
     }
+
+    public List<Course> softDelete(){
+        return courseRepository.findAllByisActive(true);
+    }
 }
