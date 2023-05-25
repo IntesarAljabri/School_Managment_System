@@ -27,6 +27,7 @@ public class ClassResponse {
         classroom.setClassCode(this.getClassCode());
 
         classroom.setIsActive(true);
+        classroom.setCreatedDate(nowDate);
         
     }
 
