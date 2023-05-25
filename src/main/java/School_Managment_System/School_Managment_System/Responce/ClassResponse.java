@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.OneToOne;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -22,7 +23,7 @@ public class ClassResponse {
     private String age;
 
     public Classroom convertToClass () {
-        
-    }
+        Date nowDate = new Date();
+    
 
 }

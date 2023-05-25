@@ -10,7 +10,6 @@ import java.util.Date;
 @Setter
 @Getter
 @Data
-
 public class BaseEntity {
 
     private Date createdDate;
