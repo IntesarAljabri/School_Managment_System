@@ -27,5 +27,7 @@ public class CourseResponse {
         course.setCourse_name(this.getCourse_name());
         course.setDescription(this.getDescription());
         course.setCode(this.getCode());
+        course.setIsActive(true);
+
 
 }
