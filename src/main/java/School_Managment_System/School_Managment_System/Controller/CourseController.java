@@ -41,7 +41,7 @@ public class CourseController {
 
         return ResponseEntity.notFound().build();
     }
-    
+
     @DeleteMapping("/{id}")
     public String deleteCourse(@PathVariable Long id) {
         courseService.deleteCourse(id);

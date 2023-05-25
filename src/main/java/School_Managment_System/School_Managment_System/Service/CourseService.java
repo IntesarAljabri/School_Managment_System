@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @Service
 public class CourseService {
     @Autowired
@@ -29,11 +31,12 @@ public class CourseService {
         courseRepository.deleteById(courseId);
         return "successfully Deleted";
     }
-    public Student updateCourse(Course updateData) {
-        Course courses = courseRepository.findById(id).orElse(null);
-        if (courses != null) {
-            courses.setCourse_name(updateData.getCourse_name());
-            courses.setTeachers(updateData.getTeachers());
+    public Course updateCourse(Long id, Course updateData) {
+        Course course = courseRepository.findById(id).orElse(null);
+        if (course != null) {
+            course.setCourse_name(updateData.getCourse_name());
+            course.setTeachers(updateData.getTeachers());
+            return courseRepository.save(course);
         }
         return null;
     }
