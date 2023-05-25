@@ -17,13 +17,13 @@ import java.util.Date;
 public class ClassResponse {
 
     private Long id;
-    private String name;
-    private String phone;
-    private String specialization;
-    private String age;
+    private Integer size;
+    private String classCode;
 
     public Classroom convertToClass () {
         Date nowDate = new Date();
-    
+        Classroom classroom = new Classroom();
+        classroom.setSize(this.getSize());
+   
 
 }
