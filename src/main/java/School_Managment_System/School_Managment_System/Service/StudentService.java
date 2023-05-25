@@ -42,10 +42,8 @@ public class StudentService {
         if (students != null) {
             students.setName(updateData.getName());
             students.setGender(updateData.getGender());
-            students.setCourses(updateData.getCourses());
             return studentRepository.save(students);
         }
         return null;
     }
-
 }
