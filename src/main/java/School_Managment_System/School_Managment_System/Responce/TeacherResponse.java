@@ -29,7 +29,9 @@ public class TeacherResponse {
         teacher.setSpecialization(this.getSpecialization());
         teacher.setAge(this.getAge());
         teacher.setIsActive(true);
-       
+        teacher.setCreatedDate(nowDate);
+        teacher.setUpdatedDate(nowDate);
+        return teacher;
 
     }
 }
