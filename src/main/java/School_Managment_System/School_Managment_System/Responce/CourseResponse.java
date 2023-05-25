@@ -21,16 +21,6 @@ public class CourseResponse {
     private String description;
     private String code;
 
-    public Course convertToCourse () {
-        Date nowDate = new Date();
-        Course course = new Course();
-        course.setCourse_name(this.getCourse_name());
-        course.setDescription(this.getDescription());
-        course.setCode(this.getCode());
-        course.setIsActive(true);
-        course.setCreatedDate(nowDate);
-        return course;
 
-    }
 
 }
