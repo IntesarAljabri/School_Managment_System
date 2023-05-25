@@ -20,6 +20,8 @@ public class Student {
     private Long id;
     String name;
     String gender;
+    Integer age;
+    String email;
     private String nationality;
     private Date createdDate;
     private Boolean isActive;
