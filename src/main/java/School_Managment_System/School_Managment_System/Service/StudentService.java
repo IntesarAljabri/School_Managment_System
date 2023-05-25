@@ -12,10 +12,10 @@ import java.util.Optional;
 public class StudentService {
 
     @Autowired
-    private StudentRepository studentRepository;
+    private static StudentRepository studentRepository;
 
     //Add new Student
-    public Student addStudents(String student) {
+    public Student addStudent(Student student) {
         return studentRepository.save(student);
     }
 
