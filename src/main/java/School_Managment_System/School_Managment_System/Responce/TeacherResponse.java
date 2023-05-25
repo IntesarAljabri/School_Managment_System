@@ -16,10 +16,10 @@ import java.util.Date;
 public class TeacherResponse {
 
     private Long id;
-    String name;
-    String phone;
-    String specialization;
-    String age;
+    private String name;
+    private String phone;
+    private String specialization;
+    private String age;
 
     public Teacher convertToTeacher () {
         Date nowDate = new Date();

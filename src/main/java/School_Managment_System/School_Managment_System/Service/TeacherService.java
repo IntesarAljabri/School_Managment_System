@@ -40,9 +40,9 @@ public class TeacherService {
 
         if (teacher != null) {
             teacher.setName(updateData.getName());
-            teacher.setAge(updateData.getAge());
+            teacher.setPhone(updateData.getPhone());
             teacher.setSpecialization(updateData.getSpecialization());
-            teacher.setGender(updateData.getGender());
+           teacher.setAge(updateData.getAge());
             teacher.setCourses(updateData.getCourses());
 
             return teacherRepository.save(teacher);
