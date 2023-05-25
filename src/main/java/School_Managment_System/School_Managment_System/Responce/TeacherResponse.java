@@ -23,6 +23,10 @@ public class TeacherResponse {
 
     public Teacher convertToTeacher () {
         Date nowDate = new Date();
-    }
+        Teacher teacher = new Teacher();
+        teacher.setName(this.getName());
 
+    }
 }
+
+
