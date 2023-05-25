@@ -20,18 +20,18 @@ public class StudentRequest {
     private String email;
 
 
-//    public String convertToStudent () {
-//        Date nowDate = new Date();
-//        Student student = new Student();
-//        student.setName(this.getName());
-//        student.setGender(this.getGender());
-//        student.setAge(this.getAge());
-//        student.setEmail(this.getEmail());
-//        student.setIsActive(true);
-//        student.setCreatedDate(nowDate);
-//        student.setUpdatedDate(nowDate);
-//        return student;
-//    }
+    public Student convertToStudent () {
+        Date nowDate = new Date();
+        Student student = new Student();
+        student.setName(this.getName());
+        student.setGender(this.getGender());
+        student.setAge(this.getAge());
+        student.setEmail(this.getEmail());
+        student.setIsActive(true);
+        student.setCreatedDate(nowDate);
+        student.setUpdatedDate(nowDate);
+        return student;
+    }
 
 }
 
