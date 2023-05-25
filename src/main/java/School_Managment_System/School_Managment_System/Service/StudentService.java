@@ -15,8 +15,8 @@ public class StudentService {
     private static StudentRepository studentRepository;
 
     //Add new Student
-    public Student addStudent(String student) {
-        return studentRepository.save(student);
+    public Student addStudent(Student students) {
+        return studentRepository.save(students);
     }
 
 
