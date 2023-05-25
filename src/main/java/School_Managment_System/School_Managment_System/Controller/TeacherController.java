@@ -3,6 +3,10 @@ package School_Managment_System.School_Managment_System.Controller;
 import School_Managment_System.School_Managment_System.Model.Course;
 import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Model.Teacher;
+import School_Managment_System.School_Managment_System.Request.StudentRequest;
+import School_Managment_System.School_Managment_System.Request.TeacherRequest;
+import School_Managment_System.School_Managment_System.Responce.StudentResponse;
+import School_Managment_System.School_Managment_System.Responce.TeacherResponse;
 import School_Managment_System.School_Managment_System.Service.CourseService;
 import School_Managment_System.School_Managment_System.Service.StudentService;
 import School_Managment_System.School_Managment_System.Service.TeacherService;
@@ -30,11 +34,28 @@ public class TeacherController {
         return teacherService.getTeacherById(id);
     }
 
-    @PostMapping(value = "add")
-    public String Teacher(@RequestBody Teacher teacher) {
-        TeacherService.addTeachers(teacher);
-        return "Class added";
+//    @PostMapping(value = "add")
+//    public String Teacher(@RequestBody Teacher teacher) {
+//        TeacherService.addTeachers(teacher);
+//        return "Class added";
+//    }
+
+    @PostMapping("/addTeacher")
+    public TeacherResponse addTeacher(@RequestBody TeacherRequest teacherRequest) {
+        Teacher savedTeacher = teacherService.addTeacher(teacherRequest.convertToTeacher());
+
+        TeacherResponse response = new TeacherResponse(
+                savedTeacher.getId(),
+                savedTeacher.getName(),
+                savedTeacher.getPhone(),
+                savedTeacher.getSpecialization(),
+                savedTeacher.getAge()
+        );
+
+        return response;
     }
+
+
 
     @DeleteMapping("/{id}")
     public String deleteTeacher(@PathVariable Long id) {
