@@ -41,7 +41,7 @@ public class TeacherService {
         if (teacher != null) {
             teacher.setName(updateData.getName());
             teacher.setAge(updateData.getAge());
-            teacher.setMajor(updateData.getMajor());
+            teacher.setSpecialization(updateData.getSpecialization());
             teacher.setGender(updateData.getGender());
             teacher.setCourses(updateData.getCourses());
 

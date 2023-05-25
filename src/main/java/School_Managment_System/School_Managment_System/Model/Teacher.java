@@ -18,7 +18,7 @@ public class Teacher {
     private Long id;
     String name;
     String gender;
-    String major;
+    String specialization;
     String age;
 
     @ManyToOne
