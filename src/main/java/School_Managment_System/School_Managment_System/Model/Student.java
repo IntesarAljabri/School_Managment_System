@@ -23,9 +23,7 @@ public class Student {
     Integer age;
     String email;
     private String nationality;
-    private Date createdDate;
-    private Boolean isActive;
-    private Date updatedDate;
+
 
     @ManyToOne
     Classroom classes;
