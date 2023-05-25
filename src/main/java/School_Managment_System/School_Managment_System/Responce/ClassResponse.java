@@ -20,15 +20,6 @@ public class ClassResponse {
     private Integer size;
     private String classCode;
 
-    public Classroom convertToClass () {
-        Date nowDate = new Date();
-        Classroom classroom = new Classroom();
-        classroom.setSize(this.getSize());
-        classroom.setClassCode(this.getClassCode());
 
-        classroom.setIsActive(true);
-        classroom.setCreatedDate(nowDate);
-        return classroom;
-    }
 
 }
