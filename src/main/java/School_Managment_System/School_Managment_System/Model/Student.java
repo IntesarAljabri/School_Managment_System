@@ -23,8 +23,7 @@ public class Student extends BaseEntity{
     Integer age;
     String email;
 
-    @ManyToOne
-    Classroom classes;
+
 
 
 //    public Student convertToStudent(String name, String gender, String nationality, String grade, Date createdDate,

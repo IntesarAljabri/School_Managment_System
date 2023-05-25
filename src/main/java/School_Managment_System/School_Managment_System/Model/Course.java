@@ -22,7 +22,7 @@ public class Course extends BaseEntity{
     String description;
     String code;
 
-    @OneToMany
-    private List<Teacher> teachers;
+    @OneToOne
+    private Teacher teachers;
 
 }
