@@ -35,7 +35,7 @@ public class StudentController {
         return studentServices.addStudent(students);
         public Addstudents addStudent (@RequestBody AddStudent studentRequest){
 
-            Student savedStudent = studentServices.addStudent(students.convertToStudent());
+            Student savedStudent = studentService.addStudent(students.convertToStudent());
 
             AddStudent response = new AddStudents(
                     savedStudent.getId(),
