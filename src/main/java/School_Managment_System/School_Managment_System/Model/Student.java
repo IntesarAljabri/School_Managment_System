@@ -21,7 +21,6 @@ public class Student {
     String name;
     String gender;
     private String nationality;
-    private String grade;
     private Date createdDate;
     private Boolean isActive;
     private Date updatedDate;
@@ -36,12 +35,12 @@ public class Student {
         this.name = name;
         this.gender = gender;
         this.nationality = nationality;
-        this.grade = grade;
         this.createdDate = createdDate;
         this.isActive = isActive;
         this.updatedDate = updatedDate;
         this.classes = classes;
         this.courses = courses;
+
     }
 
 }
