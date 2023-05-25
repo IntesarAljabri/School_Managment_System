@@ -29,8 +29,7 @@ public class Student {
 
     @ManyToOne
     Classroom classes;
-    @OneToMany
-    List<Course> courses;
+
 
 //    public Student convertToStudent(String name, String gender, String nationality, String grade, Date createdDate,
 //                                    Boolean isActive, Date updatedDate, Classroom classes, List<Course> courses) {
