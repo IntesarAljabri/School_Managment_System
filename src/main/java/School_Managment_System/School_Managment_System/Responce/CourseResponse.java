@@ -23,5 +23,6 @@ public class CourseResponse {
 
     public Course convertToCourse () {
         Date nowDate = new Date();
-      
+        Course course = new Course();
+
 }
