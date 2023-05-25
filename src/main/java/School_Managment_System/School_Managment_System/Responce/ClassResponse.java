@@ -28,7 +28,7 @@ public class ClassResponse {
 
         classroom.setIsActive(true);
         classroom.setCreatedDate(nowDate);
-        
+        return classroom;
     }
 
 }
