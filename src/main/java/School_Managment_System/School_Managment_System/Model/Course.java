@@ -19,7 +19,8 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     String course_name;
-    String grade;
+    String description;
+    String code;
 
     @OneToMany
     private List<Student> students;
