@@ -17,7 +17,7 @@ public class Teacher extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     String name;
-    String gender;
+    String phone;
     String specialization;
     String age;
 
