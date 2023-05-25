@@ -43,8 +43,7 @@ public class StudentController {
                 savedStudent.getName(),
                 savedStudent.getAge(),
                 savedStudent.getGender(),
-                savedStudent.getEmail()
-        );
+                savedStudent.getEmail());
 
         return response;
     }
