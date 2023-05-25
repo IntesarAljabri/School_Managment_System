@@ -27,7 +27,7 @@ public class StudentController {
 
         @PostMapping(value = "add")
     public String Student(@RequestBody Student students) {
-        studentService.addStudents(String.valueOf(students));
+        studentService.addStudent(String.valueOf(students));
         return "Class added";
 }
         @DeleteMapping("/{id}")
