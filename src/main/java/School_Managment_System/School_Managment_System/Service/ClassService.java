@@ -1,6 +1,7 @@
 package School_Managment_System.School_Managment_System.Service;
 
 import School_Managment_System.School_Managment_System.Model.Classroom;
+import School_Managment_System.School_Managment_System.Model.Course;
 import School_Managment_System.School_Managment_System.Repository.ClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,12 +33,12 @@ public class ClassService {
         return classRepository.save(classes);
     }
 
-    public Classroom updateClass(Class updateData) {
+    public Classroom updateClass(Long id, Course updateData) {
         Classroom classroom = classRepository.findById(id).orElse(null);
         if (classroom != null) {
-            classroom.setClassCode(Arrays.toString(updateData.getClasses()));
-
-            return classRepository.save(classroom);
+            classroom.setCourse_name(updateData.getCourse_name());
+            course.setTeachers(updateData.getTeachers());
+            return courseRepository.save(course);
         }
         return null;
     }
