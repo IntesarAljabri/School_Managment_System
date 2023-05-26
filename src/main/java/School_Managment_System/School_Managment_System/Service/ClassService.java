@@ -33,12 +33,12 @@ public class ClassService {
         return classRepository.save(classes);
     }
 
-    public Classroom updateClass(Long id, Course updateData) {
+    public Classroom updateClass(Long id, Classroom updateData) {
         Classroom classroom = classRepository.findById(id).orElse(null);
         if (classroom != null) {
-            classroom.setCourse_name(updateData.getCourse_name());
-            course.setTeachers(updateData.getTeachers());
-            return courseRepository.save(course);
+            classroom.setSize(updateData.getSize());
+            classroom.setClassCode(updateData.getClassCode());
+            return classRepository.save(classroom);
         }
         return null;
     }
