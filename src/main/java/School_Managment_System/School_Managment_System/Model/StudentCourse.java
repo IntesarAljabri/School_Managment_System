@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
 
-public class StudentCourse extends BaseEntity {
+public class StudentCourse{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
