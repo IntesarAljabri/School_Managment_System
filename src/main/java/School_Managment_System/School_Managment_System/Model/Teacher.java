@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Setter
@@ -20,7 +21,9 @@ public class Teacher extends BaseEntity{
     String phone;
     String specialization;
     String age;
-
+    private Date createdDate;
+    private Boolean isActive;
+    private Date updatedDate;
     @OneToOne
     private Course courses;
 }
