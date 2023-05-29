@@ -1,5 +1,6 @@
 package School_Managment_System.School_Managment_System.Service;
 
+import School_Managment_System.School_Managment_System.Model.Course;
 import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +45,8 @@ public class StudentService {
             return studentRepository.save(students);
         }
         return null;
+    }
+    public List<Student> softDelete(){
+        return studentRepository.findAllByisActive(true);
     }
 }
