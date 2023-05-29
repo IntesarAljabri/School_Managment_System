@@ -46,9 +46,9 @@ public class TeacherService {
 
             return teacherRepository.save(teacher);
         }
-
-
-
         return null;
+    }
+    public List<Teacher> softDelete(){
+        return teacherRepository.findAllByisActive(true);
     }
 }
