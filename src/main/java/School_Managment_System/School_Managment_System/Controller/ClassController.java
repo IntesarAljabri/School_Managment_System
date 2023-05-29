@@ -39,7 +39,7 @@ public class ClassController {
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateClass(@PathVariable Long id, @RequestBody Classroom classroom) {
         classroom.setId(id);
-        Classroom updatedClass = classService.updateClass(classroom.getClass());
+        Classroom updatedClass = classService.updateClass(classroom.getClass(id).get());
 
         if (updatedClass != null) {
             return ResponseEntity.ok(updatedClass);
