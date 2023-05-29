@@ -42,4 +42,8 @@ public class ClassService {
         }
         return null;
     }
+
+    public List<Classroom> softDelete(){
+        return classRepository.findAllByisActive(true);
+    }
 }
