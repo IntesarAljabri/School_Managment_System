@@ -1,6 +1,7 @@
 package School_Managment_System.School_Managment_System.Controller;
 
 import School_Managment_System.School_Managment_System.Model.Classroom;
+import School_Managment_System.School_Managment_System.Model.Course;
 import School_Managment_System.School_Managment_System.Model.Student;
 import School_Managment_System.School_Managment_System.Service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,12 +40,11 @@ public class ClassController {
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateClass(@PathVariable Long id, @RequestBody Classroom classroom) {
         classroom.setId(id);
-        Classroom updatedClass = classService.updateClass(classroom.getClass(id).get());
+        Classroom updatedClass = classService.updateClass(classroom);
 
         if (updatedClass != null) {
             return ResponseEntity.ok(updatedClass);
         }
-
         return ResponseEntity.notFound().build();
     }
 }
