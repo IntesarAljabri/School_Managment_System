@@ -31,7 +31,7 @@ public class ClassService {
         return classRepository.save(classes);
     }
 
-    public Classroom updateClass(Classroom updateData) {
+    public Classroom updateClass(Long id, Classroom updateData) {
         Classroom classroom = classRepository.findById(id).orElse(null);
         if (classroom != null) {
             classroom.setSize(updateData.getSize());
@@ -40,7 +40,6 @@ public class ClassService {
         }
         return null;
     }
-
     public List<Classroom> softDelete(){
         return classRepository.findAllByisActive(true);
     }
