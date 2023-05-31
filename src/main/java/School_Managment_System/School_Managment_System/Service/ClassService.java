@@ -39,7 +39,7 @@ public class ClassService {
     }
 
     //update the information about class
-    public Classroom updateClass(Long id, Classroom updateData) {
+    public Classroom updateClass(Classroom updateData) {
         Classroom classroom = classRepository.findById(id).orElse(null);
         if (classroom != null) {
             classroom.setSize(updateData.getSize());
