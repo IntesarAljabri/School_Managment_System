@@ -15,12 +15,16 @@ public class TeacherService {
     @Autowired
     private static TeacherRepository teacherRepository;
 
+    //add new teacher
     public Teacher addTeacher(Teacher teacher) {
         return teacherRepository.save(teacher);
     }
+    //get all teacher
     public List<Teacher> getAllTeachers() {
         return teacherRepository.findAll();
     }
+
+    //get teacher by id
     public Teacher getTeacherById(Long id) {
         return teacherRepository.findById(id).get();
     }
@@ -29,11 +33,13 @@ public class TeacherService {
         return teacherRepository.save(teacher);
     }
 
+    //delete teacher
     public String deleteTeacher(Long id) {
         teacherRepository.deleteById(id);
         return "Deleted  Successfully";
     }
 
+    //update information about Teacher
     public Teacher updateTeacher(Long id, Teacher updateData){
         Teacher teacher = teacherRepository.findById(id).orElse(null);
 
@@ -48,6 +54,7 @@ public class TeacherService {
         }
         return null;
     }
+    //check if it isActive or not
     public List<Teacher> softDelete(){
         return teacherRepository.findAllByisActive(true);
     }

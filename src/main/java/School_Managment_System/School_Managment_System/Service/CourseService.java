@@ -15,21 +15,28 @@ public class CourseService {
     static
     CourseRepository courseRepository;
 
+    //get all course
     public List<Course> getAllCourse() {
         return courseRepository.findAll();
     }
 
+    //get course by id
     public Course getCourseById(Long id) {
         return courseRepository.getById(id);
     }
 
+    //add new course
     public Course addCourse(Course courses) {
         return courseRepository.save(courses);
     }
+
+    //delete course by id
     public String deleteCourse(Long courseId) {
         courseRepository.deleteById(courseId);
         return "successfully Deleted";
     }
+
+    //update information about course
     public Course updateCourse(Long id, Course updateData) {
         Course course = courseRepository.findById(id).orElse(null);
         if (course != null) {
@@ -40,6 +47,7 @@ public class CourseService {
         return null;
     }
 
+    //check if it isActive or not
     public List<Course> softDelete(){
         return courseRepository.findAllByisActive(true);
     }

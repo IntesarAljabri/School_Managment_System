@@ -12,25 +12,33 @@ public class ClassService {
 
     @Autowired
     ClassRepository classRepository;
+
+    //get all class
     public List<Classroom> getAllClasses() {
         return classRepository.findAll();
     }
 
+    //get class by id
     public Classroom getClassById(Long id) {
         return classRepository.getById(id);
     }
 
+     //get class by id
     public Classroom getClassroomtById(Long id) {
         return classRepository.findById(id).get();
     }
+
+    //delete class
     public void deleteClass(Long id) {
         classRepository.deleteById(id);
     }
 
+    //add new class
     public Classroom addClass(Classroom classes) {
         return classRepository.save(classes);
     }
 
+    //update the information about class
     public Classroom updateClass(Long id, Classroom updateData) {
         Classroom classroom = classRepository.findById(id).orElse(null);
         if (classroom != null) {
@@ -40,6 +48,7 @@ public class ClassService {
         }
         return null;
     }
+    //check if it isActive or not
     public List<Classroom> softDelete(){
         return classRepository.findAllByisActive(true);
     }
