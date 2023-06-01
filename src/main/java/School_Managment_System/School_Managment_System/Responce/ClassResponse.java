@@ -28,6 +28,9 @@ public class ClassResponse {
                 .build();
     }
 
-   
+    public static List<ClassResponse> convertRequestListToResponseList(List<Classroom> classRequest) {
+        List<ClassResponse> classResponseList = new ArrayList<>();
+        if (!classRequest.isEmpty()) {
+      
 
 }
