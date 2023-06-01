@@ -33,6 +33,9 @@ public class ClassRequest {
         List<Classroom> classRooms = new ArrayList<>();
         if (!requestList.isEmpty()) {
             for (ClassRequest classRequest : requestList) {
-          
+                classRooms.add((Classroom) convert((List<ClassRequest>) classRequest));
+            }
+        }
+        return classRooms;
     }
 }
