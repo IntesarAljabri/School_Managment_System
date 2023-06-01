@@ -31,6 +31,11 @@ public class ClassResponse {
     public static List<ClassResponse> convertRequestListToResponseList(List<Classroom> classRequest) {
         List<ClassResponse> classResponseList = new ArrayList<>();
         if (!classRequest.isEmpty()) {
-      
+            for (Classroom classRoomRequest : classRequest) {
+                classResponseList.add(convertRequestToResponse(classRoomRequest));
+            }
+        }
+        return classResponseList;
+    }
 
 }
