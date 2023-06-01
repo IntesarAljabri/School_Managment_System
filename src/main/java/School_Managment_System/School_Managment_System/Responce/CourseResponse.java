@@ -30,6 +30,7 @@ public class CourseResponse {
                 .build();
     }
 
+    public static List<CourseResponse> convertRequestListToResponseList(List<Course> courseRequest) {
     
 
 }
