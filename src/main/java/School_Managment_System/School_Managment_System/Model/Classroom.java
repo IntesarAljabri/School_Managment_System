@@ -20,9 +20,7 @@ public class Classroom{
     private Long id;
     Integer size;
     String classCode;
-    private Date createdDate;
-    private Boolean isActive;
-    private Date updatedDate;
+
 
     @OneToMany
     private List<Course> courses;

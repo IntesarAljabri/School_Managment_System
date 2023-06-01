@@ -22,9 +22,6 @@ public class Student{
     String gender;
     Integer age;
     String email;
-    private Date createdDate;
-    private Boolean isActive;
-    private Date updatedDate;
 
 
 

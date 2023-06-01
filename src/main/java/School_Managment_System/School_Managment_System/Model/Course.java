@@ -22,9 +22,7 @@ public class Course {
     String course_name;
     String description;
     String code;
-    private Date createdDate;
-    private Boolean isActive;
-    private Date updatedDate;
+
     @OneToOne
     private Teacher teachers;
 
