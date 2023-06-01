@@ -31,5 +31,8 @@ public class ClassRequest {
     }
     public static List<Classroom> convert(List<ClassRequest> requestList) {
         List<Classroom> classRooms = new ArrayList<>();
+        if (!requestList.isEmpty()) {
+            for (ClassRequest classRequest : requestList) {
+          
     }
 }
