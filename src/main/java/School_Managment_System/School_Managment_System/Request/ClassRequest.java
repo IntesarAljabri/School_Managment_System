@@ -29,5 +29,7 @@ public class ClassRequest {
         classroom.setCreatedDate(nowDate);
         return classroom;
     }
-  
+    public static List<Classroom> convert(List<ClassRequest> requestList) {
+        List<Classroom> classRooms = new ArrayList<>();
+    }
 }
