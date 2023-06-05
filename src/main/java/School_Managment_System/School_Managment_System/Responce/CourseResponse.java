@@ -31,6 +31,7 @@ public class CourseResponse {
     }
 
     public static List<CourseResponse> convertRequestListToResponseList(List<Course> courseRequest) {
-    
+        List<CourseResponse> courseResponseList = new ArrayList<>();
 
+    }
 }
