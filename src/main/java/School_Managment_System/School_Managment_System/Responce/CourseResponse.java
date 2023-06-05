@@ -34,6 +34,9 @@ public class CourseResponse {
         List<CourseResponse> courseResponseList = new ArrayList<>();
         if (!courseRequest.isEmpty()) {
             for (Course coursesRequest : courseRequest) {
-           
+                courseResponseList.add(convertRequestToResponse(coursesRequest));
+            }
+        }
+        return courseResponseList;
     }
 }
