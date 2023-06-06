@@ -21,7 +21,6 @@ public class Classroom extends BaseEntity{
     Integer size;
     String classCode;
 
-
     @OneToMany
     private List<Course> courses;
 

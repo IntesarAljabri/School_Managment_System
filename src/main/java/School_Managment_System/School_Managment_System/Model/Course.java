@@ -23,6 +23,7 @@ public class Course extends BaseEntity{
     String description;
     String code;
 
+    //relationship of teacher
     @OneToOne
     private Teacher teachers;
 

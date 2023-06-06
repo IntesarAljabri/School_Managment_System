@@ -13,6 +13,7 @@ public class StudentCourse extends BaseEntity{
     private Long id;
     String garde;
 
+    //RelationShip of course and student
     @OneToMany
     List<Course> courses;
     @OneToMany

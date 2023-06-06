@@ -22,6 +22,7 @@ public class Teacher extends BaseEntity {
     String specialization;
     String age;
 
+    //RelationShip between course and teacher
     @OneToOne
     private Course courses;
 }
