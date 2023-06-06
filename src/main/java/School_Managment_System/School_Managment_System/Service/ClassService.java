@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @Service
 public class ClassService {
 
@@ -39,7 +41,7 @@ public class ClassService {
     }
 
     //update the information about class
-    public Classroom updateClass(Classroom updateData) {
+    public Classroom updateClass(Long id ,Classroom updateData) {
         Classroom classroom = classRepository.findById(id).orElse(null);
         if (classroom != null) {
             classroom.setSize(updateData.getSize());
