@@ -14,20 +14,25 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
+    //Get all course
     @GetMapping(value = "getAll")
     public List<Course> getAllCourse() {
         return courseService.getAllCourse();
     }
+
+    //get course Active
     @GetMapping(value = "getAllActive")
     public List<Course> getAllCourseActive() {
         return courseService.softDelete();
     }
 
+    //Get Course by id
     @GetMapping(value = "getById")
     public Course getClassById(Long id) {
         return courseService.getCourseById(id);
     }
 
+    //Add new course
     @PostMapping(value = "add")
     public String Course(@RequestBody Course courses) {
         courseService.addCourse(courses);
@@ -40,6 +45,7 @@ public class CourseController {
         return courseService.deleteCourse(id);
     }
 
+    //update the course information
     @PutMapping("/{id}")
     public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course courses) {
         courses.setId(id);
