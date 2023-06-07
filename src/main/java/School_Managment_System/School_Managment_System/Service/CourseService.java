@@ -37,10 +37,10 @@ public class CourseService {
     }
 
     //update information about course
-    public Course updateCourse(Long id ,Course updateData) {
+    public Course updateCourse(Course updateData) {
         Course course = courseRepository.findById(id).orElse(null);
         if (course != null) {
-            course.setCourse_name(updateData.getCourse_name());
+            course.setCourseName(updateData.getCourseName());
             course.setTeachers(updateData.getTeachers());
             return courseRepository.save(course);
         }

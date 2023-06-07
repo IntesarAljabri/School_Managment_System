@@ -19,7 +19,7 @@ public class Course extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    String course_name;
+    String courseName;
     String description;
     String code;
 
