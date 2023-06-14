@@ -38,7 +38,7 @@ public class CourseService {
 
     //update information about course
     public Course updateCourse(Course updateData) {
-        Course course = courseRepository.findById(id).orElse(null);
+        Course course = courseRepository.findById(updateData.getId()).orElse(null);
         if (course != null) {
             course.setCourseName(updateData.getCourseName());
             course.setTeachers(updateData.getTeachers());
